@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta</title>
+</head>
+
+<body>
+    <section>
+        <article>
+            <form id="formularioPrueba" action="" method="get">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required />
+                <label for="pass">Contraseña:</label>
+                <input type="text" id="pass" required />
+                <label for="email">Correo:</label>
+                <input type="email" id="email" required>
+                <input type="submit" name="enviar" id="enviar" value="Enviar" />
+            </form>
+            <div id="confirmacion"></div>
+        </article>
+    </section>
+    <script>
+        window.onload = iniciar;
+        function iniciar() {
+            function guardarDatos() {
+                var nombre = document.getElementById("nombre").value;
+                var pass = document.getElementById("pass").value;
+                var correo = document.getElementById("email").value;
+                //Tengo que programar el buscar en localStorage si ya existe ese usuario{{IMPORTANTE}}
+                if (nombre != "" && pass != "" && correo != "") {
+                    var persona = { 'contrasenia': pass, 'email': correo };
+                    localStorage.setItem(nombre, JSON.stringify(persona));
+                    document.getElementById("confirmacion").innerHTML = "Se ha creado la cuenta correctamente.";
+                    event.preventDefault();
+                }
+            }
+            document.getElementById("enviar").addEventListener('click', guardarDatos, false);
+        }
+    </script>
+</body>
+
+</html>
