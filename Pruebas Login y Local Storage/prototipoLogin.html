@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <section>
+        <article>
+            <form id="formularioPrueba" action="" method="get">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required />
+                <br>
+                <label for="pass">Contraseña:</label>
+                <input type="text" id="pass" required />
+                <br>
+                <label for="email">Correo:</label>
+                <input type="email" id="email" required>
+                <br>
+                <input type="submit" name="enviar" id="enviar" value="Enviar" />
+            </form>
+            <br>
+            <div id="confirmacion"></div>
+        </article>
+    </section>
+    <script>
+        window.onload = iniciar;
+        function iniciar(){
+            //Variables globales a la funcion iniciar
+            var encontrado = false;
+            var nombre = "";
+            function compruebaNombre(){
+                //Busqueda secuencial del nombre en localStorage
+                var i = 0;
+                while(i < localStorage.length && this.value != localStorage.key(i)){
+                    i++;
+                }
+                if(i == localStorage.length){ //si no ha encontrado el nombre
+                    document.getElementById("confirmacion").innerHTML = "No se encuentra el usuario.";
+                    encontrado = false;
+                }else{
+                    document.getElementById("confirmacion").innerHTML = "";
+                    nombre = localStorage.key(i); //Aqui guardo el nombre, que es la key del localStorage
+                    encontrado = true;
+                }
+            }
+            document.getElementById("nombre").addEventListener('blur', compruebaNombre, false);
+            function compruebaLogin(){
+                if(encontrado){
+                    objetoNombre = JSON.parse(localStorage.getItem(nombre));
+                    if(document.getElementById("pass").value != objetoNombre.contrasenia){
+                        event.preventDefault();
+                        document.getElementById("confirmacion").innerHTML = "La contraseña no es correcta";
+                    }else{
+                        document.getElementById("confirmacion").innerHTML = "";
+                        window.open("https://www.eusa.es/tag/nuevas-profesiones/","_self");
+                    }
+                }
+            }
+            document.getElementById("enviar").addEventListener('click', compruebaLogin, false);
+        }
+    </script>
+</body>
+</html>

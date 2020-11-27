@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+    <input type="button" id="lol" value="PULSA">
+    <input type="button" id="comprueba" value="comprueba">
+    -->
+    <script>
+        /*
+        function contador(val){
+            val++;
+        }
+        var valor = 0;
+        document.getElementById("lol").addEventListener("click",contador(valor),true);
+        function test(val){
+            alert(val);
+        }
+        document.getElementById("comprueba").addEventListener("click",test(valor),true);
+        /*
+        */
+        var object = {'uno' : '1','dos' : '2','nombre' : 'joaquin'};//Crea objeto
+        object.uno="lol";
+        localStorage.setItem('key', JSON.stringify(object));//Transforma el objeto en un string y lo guarda en local
+        var object2 = JSON.parse(localStorage.getItem('key'));//Toma el string guardado en local y lo transforma en objeto
+        alert(object2.uno);
+        alert(object2.nombre);
+        alert(localStorage.length);
+        var prueba = JSON.parse(localStorage.getItem("joaquin"));
+        alert(prueba.email);
+        var lol = JSON.stringify(localStorage); //Esto me devuelte todos los items en el localStorage
+        alert(lol);
+        i=2;
+        lol2 = JSON.parse(localStorage.getItem( localStorage.key(i))); // esto devuelve el contenido de la key del indice indicado (el objeto)!!!!!!IMPORTANTE!!!!!!!!
+        alert(lol2.email);
+        alert(localStorage.key(i));//Esto da el nombre la key en sí. Con esto comprueba si el nombre ya se ha metido!!!!!!IMPORTANTE!!!!!!!!
+        /*
+        var lolArray = lol.split(","); //Esto en cada indice tiene un objeto
+        var i = 0;
+        localStorage.getItem( localStorage.key(1) );
+        */
+    </script>
+</body>
+</html>

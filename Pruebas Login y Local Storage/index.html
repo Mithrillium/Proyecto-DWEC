@@ -1,48 +1,104 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Validación Formulario - BASE</title>
+    <script type="text/javascript" src="script.js"></script>
+    <style type="text/css">
+        label {
+            width: 150px;
+            float: left;
+            margin-bottom: 5px;
+        }
+
+        input,
+        select {
+            width: 150px;
+            float: left;
+            margin-bottom: 5px;
+        }
+
+        fieldset {
+            background: #66CCCC;
+            width: 350px;
+            border: thick solid #306;
+        }
+
+        legend {
+            border-top-width: medium;
+            border-right-width: medium;
+            border-bottom-width: medium;
+            border-left-width: medium;
+            border-top-style: solid;
+            border-right-style: solid;
+            border-bottom-style: solid;
+            border-left-style: solid;
+            background-color: #FFF;
+        }
+
+        #mensajes {
+            float: left;
+            background: #33FF33;
+            width: 325px;
+        }
+
+        #errores {
+            float: left;
+            background: #FF6633;
+            width: 325px;
+        }
+
+        #intentos {
+            float: left;
+            background: #CCFF33;
+            width: 325px;
+        }
+
+        .error {
+            border: solid 2px #FF0000;
+
+        }
+    </style>
 </head>
+
 <body>
-    <!--
-    <input type="button" id="lol" value="PULSA">
-    <input type="button" id="comprueba" value="comprueba">
-    -->
-    <script>
-        /*
-        function contador(val){
-            val++;
-        }
-        var valor = 0;
-        document.getElementById("lol").addEventListener("click",contador(valor),true);
-        function test(val){
-            alert(val);
-        }
-        document.getElementById("comprueba").addEventListener("click",test(valor),true);
-        /*
-        */
-        var object = {'uno' : '1','dos' : '2','nombre' : 'joaquin'};//Crea objeto
-        object.uno="lol";
-        localStorage.setItem('key', JSON.stringify(object));//Transforma el objeto en un string y lo guarda en local
-        var object2 = JSON.parse(localStorage.getItem('key'));//Toma el string guardado en local y lo transforma en objeto
-        alert(object2.uno);
-        alert(object2.nombre);
-        alert(localStorage.length);
-        var prueba = JSON.parse(localStorage.getItem("joaquin"));
-        alert(prueba.email);
-        var lol = JSON.stringify(localStorage); //Esto me devuelte todos los items en el localStorage
-        alert(lol);
-        i=2;
-        lol2 = JSON.parse(localStorage.getItem( localStorage.key(i))); // esto devuelve el contenido de la key del indice indicado
-        alert(lol2.email);
-        alert(localStorage.key(i));//Esto da el nombre la key en sí. Con esto comprueba si el nombre ya se ha metido!!!!!!
-        /*
-        var lolArray = lol.split(","); //Esto en cada indice tiene un objeto
-        var i = 0;
-        localStorage.getItem( localStorage.key(1) );
-        */
-    </script>
+    <fieldset>
+        <legend>DWEC - VALIDACIÓN FORMULARIO</legend>
+        <form name="formulario" id="formulario" action="https://www.eusa.es/tag/nuevas-profesiones/" method="get">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre" />
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" name="apellidos" id="apellidos" />
+            <label for="edad">Edad:</label>
+            <input name="edad" type="text" id="edad" maxlength="3" />
+            <label for="nif">NIF:</label>
+            <input name="nif" type="text" id="nif" />
+            <label for="email">E-mail:</label>
+            <input name="email" type="text" id="email" />
+            <label for="provincia">Provincia:</label>
+            <select name="provincia" id="provincia">
+                <option value="0" selected="selected">Seleccione Provincia</option>
+                <option value="SE">Sevilla</option>
+                <option value="CA">Cádiz</option>
+                <option value="HU">Huelva</option>
+                <option value="AL">Almería</option>
+                <option value="CO">Córdoba</option>
+                <option value="MA">Málaga</option>
+            </select>
+            <label for="fecha">Fecha Nacimiento:</label>
+            <input name="fecha" type="text" id="fecha" />
+            <label for="telefono">Teléfono:</label>
+            <input name="telefono" type="text" id="telefono" maxlength="9" />
+            <label for="hora">Hora de visita:</label>
+            <input name="hora" type="text" id="hora" />
+            <input type="reset" name="limpiar" id="button" value="Limpiar" />
+            <input type="submit" name="enviar" id="enviar" value="Enviar" />
+        </form>
+        <div id="errores"></div>
+        <div id="intentos"></div>
+    </fieldset>
 </body>
+
 </html>
