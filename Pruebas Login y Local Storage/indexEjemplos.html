@@ -23,6 +23,17 @@
         document.getElementById("comprueba").addEventListener("click",test(valor),true);
         /*
         */
+        var array = JSON.parse(localStorage.getItem("prueba3"));
+        passs = array.pass;
+        alert(passs);
+        alert(array.mail);
+        //matriz = new Array();
+        matriz = array.valoresDeDesgaste;
+        if(matriz == null){
+            alert("que cojones");
+        }else{
+            alert(matriz[0][0]);
+        }
         var object = {'uno' : '1','dos' : '2','nombre' : 'joaquin'};//Crea objeto
         object.uno="lol";
         localStorage.setItem('key', JSON.stringify(object));//Transforma el objeto en un string y lo guarda en local

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases</title>
+</head>
+
+<body>
+    <script>
+        function Patinador(pass, mail) {
+            this.pass = pass;
+            this.mail = mail;
+            this.valoresDeDesgaste = function (valor){
+                this.valoresDesgaste = valor;
+            };
+            this.acumuladoDesgaste = function (valor){
+                this.acumuladoDesgaste = valor;
+            };
+            this.haEntrado = function (valor){
+                this.haEntrado = valor;
+            };
+        };
+        var valoresDesgaste = [
+            [10, 60, 1],
+            [10, 35, 2],
+            [10, 50, 3],
+            [10, 60, 4],
+            [10, 35, 5],
+            [10, 50, 6]
+        ];
+        var desgasteAcumulado = [
+            [10, 60, 1],
+            [10, 35, 2],
+            [10, 50, 3],
+            [10, 60, 4],
+            [10, 35, 5],
+            [10, 50, 6]
+        ];
+        prueba = new Patinador("lol", "lol@lol.com");
+        prueba.haEntrado(true);
+        prueba.valoresDeDesgaste(valoresDesgaste);
+        if(prueba.haEntrado){
+            alert("Lo he cambiado a true y funciona");
+            var lol = prueba.valoresDesgaste;
+            alert("Primera rueda: "+ lol[0][1]);
+        }
+        
+    </script>
+</body>
+
+</html>
