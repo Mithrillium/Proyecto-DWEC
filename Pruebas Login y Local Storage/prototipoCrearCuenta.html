@@ -33,7 +33,7 @@
                 var nombre = document.getElementById("nombre").value;
                 var pass = document.getElementById("pass").value;
                 var correo = document.getElementById("email").value;
-                //Tengo que programar el buscar en localStorage si ya existe ese usuario{{IMPORTANTE}}
+                ////////Tengo que programar el buscar en localStorage si ya existe ese usuario{{IMPORTANTE}}/////////
                 if (nombre != "" && pass != "" && correo != "") {
                     var persona = { 'contrasenia': pass, 'email': correo };
                     localStorage.setItem(nombre, JSON.stringify(persona));

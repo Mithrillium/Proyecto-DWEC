@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PruebaArrays</title>
+</head>
+<body>
+    <script>
+        //Estas dos tablas son del objeto persona. Se crean tal y como están al crear ese objeto persona en el login. No en este docu.
+        //Tras cojer los datos de como patina en el segundo formulario se suman esos valores a ambas tablas. No en este docu.
+        var valoresDescagaste = [
+            [10,60,1],
+            [10,35,2],
+            [10,50,3],
+            [10,60,4],
+            [10,35,5],
+            [10,50,6]
+        ];
+        var desgasteAcumulado = [
+            [10,60,1],
+            [10,35,2],
+            [10,50,3],
+            [10,60,4],
+            [10,35,5],
+            [10,50,6]
+        ];
+        //Si pongo eso así, "vincula" las direciones de memoria y 1 sort afecta a las dos tablas
+        //var desgasteAcumulado = valoresDescagaste;
+        desgasteAcumulado = desgasteAcumulado.sort((a, b) => b[1] - a[1]); //Este sort se hace solo una vez, al entregar el formulario de como se patina. No ene este docu.
+        valoresDescagaste = valoresDescagaste.sort((a, b) => a[1] - b[1]); //Este sort se hace cada vez que el usuario valla a cambiar ruedas.
+        //alert(valoresDescagaste.join('\n'));
+        //alert(desgasteAcumulado.join('\n'));
+        for(var i = 0; i < 6; i++){
+            var pos1 = desgasteAcumulado[i][2];
+            var pos2 = valoresDescagaste[i][2];
+            alert("Rueda en posición "+desgasteAcumulado[i][2]+" a posición "+valoresDescagaste[i][2]+".");
+            /*
+            En este for tambien hay que comprobar:
+                1. Si cambia o no de posición.
+                2. Si cambia, si cambia o no de patín.
+                3. Si gira sobre si mismo o no 
+                    3.1 Mismo patín [x][0] < [x][1] rota. Osea, si el exterior esta menos desgastado, rota. 
+                    3.2 Cambia patín [x][0] > [x][1] rota. Osea, si el exterior está más desgastado, será otra vez exterior.
+            */
+        }
+        //Despues de ordenar así y mostrar, los valores de [x][2] de desgasteAcumulado son los mismos, en mismo orden que valoresDescagaste.
+        //A la vez, despues de mostrar, sumo los valores de valoresDescagaste a desgasteAcumulado [x][0] y [x][1]
+        //La próxima vez que entre, hara los sort y mostrará igualmente
+    </script>
+</body>
+</html>
