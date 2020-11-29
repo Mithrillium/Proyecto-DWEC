@@ -6,6 +6,30 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script>
+        var usuario = null;
+        var nombre = "";
+        window.onload = compruebaUsuario;
+        //window.onload = iniciar;
+        function compruebaUsuario(){
+            var encontrado = false;
+            var i = 0;
+            while(!encontrado){
+                usuario = JSON.parse(localStorage.getItem( localStorage.key(i)));
+                //Quizas tengo que comprobar si es un objeto
+                if(usuario.haEntrado){
+                    nombre = localStorage.key(i);
+                    usuario.haEntrado = false;
+                    localStorage.setItem(nombre, JSON.stringify(usuario));
+                    encontrado = true;
+                    //alert(nombre);
+                    //document.getElementById("nom").innerHTML = nombre;
+                }
+                i++;
+            }
+
+            alert(usuario.acumuladoDesgaste[0][1]);
+        }
+    </script>
 </body>
 </html>
