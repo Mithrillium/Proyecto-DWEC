@@ -11,6 +11,8 @@
     <section>
         <article>
             <form id="formularioPrueba" action="" method="get">
+                <fieldset>
+                <legend>Crea tu cuenta</legend>
                 <label for="nombre">Nombre:</label>
                 <br>
                 <input type="text" id="nombre" required />
@@ -21,13 +23,14 @@
                 <br>
                 <label for="pass">Contraseña:</label>
                 <br>
-                <input type="text" id="pass" required />
+                <input type="password" id="pass" required />
                 <br>
                 <label for="pass">Confirma contraseña:</label>
                 <br>
-                <input type="text" id="passConf" required />
+                <input type="password" id="passConf" required />
                 <br>
                 <input type="submit" name="enviar" id="enviar" value="Enviar" />
+                </fieldset>
             </form>
             <div id="confirmacion"></div>
         </article>
@@ -58,6 +61,9 @@
                 };
                 this.haEntrado = function (valor) {
                     this.haEntrado = valor;
+                };
+                this.haCompletadoFormulario = function (valor) {
+                    this.haCompletadoFormulario = valor;
                 };
             };
             function guardarDatos() {
@@ -90,6 +96,7 @@
                             persona.valoresDeDesgaste(valoresDesgaste);
                             persona.acumuladoDesgaste(desgasteAcumulado);
                             persona.haEntrado(false); //Para encontrar usuario en la siguiente página, al hacer login pongo true y busco el único true luego.
+                            persona.haCompletadoFormulario(false);
                             localStorage.setItem(nombre, JSON.stringify(persona));
                             document.getElementById("confirmacion").innerHTML = "Se ha creado la cuenta correctamente.";
                         } else {//Si no coinciden...
