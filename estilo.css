@@ -8,8 +8,15 @@ body{
     background-color: black;
  }
 header{
+    margin:auto;
+    width: 60%;
     height: 300px;
     text-align: center;
+    background-color: white;
+    border-style: groove;
+    border-width: 2mm;
+    border-radius: 1mm;
+    margin-top: 5px;
 }
 #ruedaIzq{
     float: left;
@@ -26,14 +33,48 @@ section{
     border-width: 2mm;
     border-radius: 1mm;
 }
+footer{
+    margin:auto;
+    width: 60%;
+    height: 300px;
+    text-align: center;
+    background-color: white;
+    border-style: groove;
+    border-width: 2mm;
+    border-radius: 1mm;
+    margin-top: 5px;
+}
+#ruedaUp{
+    max-width: 100%;
+    max-height: 100%;
+}
 form{
     margin: auto;
     width: 200px;
     margin-top: 10px;
+    font-weight: bold;
+}
+fieldset{
+    border-color: black;
+}
+#enviar{
+    background-color: white;
+    color:black;
+    letter-spacing: 0px;
+    font-weight: bolder;
 }
 #confirmacion{
     text-align: center;
     color: red;
     font-weight: bolder;
 
+}
+input{
+    background-color: black;
+    letter-spacing: 2px;
+    color:white;
+    font-weight: bolder;
+}
+#headerPersonalizado{
+    height: 100px;
 }

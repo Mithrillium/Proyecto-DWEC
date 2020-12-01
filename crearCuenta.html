@@ -4,14 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css" type="text/css">
     <script src="crearCuenta.js"></script>
     <title>Crear Cuenta</title>
 </head>
 
 <body>
-    <section>
+    <header>
+        <img id="ruedaIzq" src="img/RuedaIzquierda.png" alt="RuedaIzquierda">
+        <img id="logo" src="img/logo.png" alt="logo">
+        <img id="ruedaDer" src="img/Ruedaderecha.png" alt="RuedaDerecha">
+    </header>
+    <section id="contenido">
         <article>
-            <form id="formularioPrueba" action="" method="get">
+            <form id="formularioCrear" action="" method="get">
                 <fieldset>
                 <legend>Crea tu cuenta</legend>
                 <label for="nombre">Nombre:</label>
@@ -33,9 +39,13 @@
                 <input type="submit" name="enviar" id="enviar" value="Enviar" />
                 </fieldset>
             </form>
+            <br>
             <div id="confirmacion"></div>
         </article>
     </section>
+    <footer>
+        <img id="ruedaUp" src="img/RuedaArriba.png" alt="RuedaArriba">
+    </footer>
 </body>
 
 </html>

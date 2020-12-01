@@ -23,7 +23,6 @@ function iniciar() {
     document.getElementById("nombre").addEventListener('blur', compruebaNombre, false);
 
     function compruebaLogin() {
-        event.preventDefault();
         if (encontrado) {
             objetoNombre = JSON.parse(localStorage.getItem(nombre));
             if (document.getElementById("pass").value != objetoNombre.pass) {

@@ -1,56 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css" type="text/css">
     <script src="formulario.js"></script>
     <title>Formulario</title>
 </head>
+
 <body>
-    <h3>Hola <span id="nom"></span></h3>
-    <br>
-    <h2>Alunas preguntas, para que la aplicación funcione mejor.</h2>
-    <br>
-    <form action="">
-        <h3><label for="pierna">¿Zurdo o diestro?</label></h3>
-        <select name="derechaIzquierda" id="pierna" required>
-            <option value="0" selected="selected">Elija una opción</option>
-            <option value="zurdo">Zurdo</option>
-            <option value="diestro">Diestro</option>
-            <option value="ambi">Ambidiestro</option> 
-        </select>
-        <!--
-        <h3><label for="pieFreno">¿Con que pie sueles frenar?</label></h3>
-        <select name="pieFrenada" id="pieFreno">
-            <option value="0" selected="selected">Elija una opción</option>
-            <option value="izquierdo">Izquierdo</option>
-            <option value="derecho">Derecho</option>
-            <option value="ambos">Ambos</option>
-        </select>
-        -->
-        <h3><label for="formaFrenar">¿Cómo sueles frenar?</label></h3>
-        <select name="forma" id="formaFrenar">
-            <option value="0" selected="selected">Elija una opción</option>
-            <option value="t">En T</option>
-            <option value="v">En V</option>
-            <option value="taco">Con taco</option>
-            <option value="etc">Un poco de todo</option>
-        </select>
-        <h3><label for="tipoRueda">Selecciona la dureza de las ruedas.</label></h3>
-        <select name="durezaRuedas" id="tipoRueda" required>
-            <option value="0" selected="selected">Elija una opción</option>
-            <option value="74">74A</option>
-            <option value="78">78A</option>
-            <option value="82">82A</option> 
-            <option value="85">85A</option>
-            <option value="88">88A</option>
-            <option value="90">90A</option>
-            <option value="100">100A</option>
-            <option value="No">No lo se</option>
-        </select>
-        <br>
-        <input type="button" value="Enviar" id="enviar">
-    </form>
-    <div id="confirmacion"></div>
+    <header>
+        <img id="ruedaIzq" src="img/RuedaIzquierda.png" alt="RuedaIzquierda">
+        <img id="logo" src="img/logo.png" alt="logo">
+        <img id="ruedaDer" src="img/Ruedaderecha.png" alt="RuedaDerecha">
+    </header>
+    <section id="contenido">
+        <article>
+            <header id="headerPersonalizado">
+                <h2>Hola <span id="nom"></span></h2>
+                <h3>Alunas preguntas, para que la aplicación funcione mejor</h3>
+            </header>
+            <form id="formularioPrincipal" action="" method="get">
+                <fieldset>
+                    <h3><label for="pierna">¿Zurdo o diestro?</label></h3>
+                    <select name="derechaIzquierda" id="pierna" required>
+                        <option value="0" selected="selected">Elija una opción</option>
+                        <option value="zurdo">Zurdo</option>
+                        <option value="diestro">Diestro</option>
+                        <option value="ambi">Ambidiestro</option>
+                    </select>
+                    <h3><label for="formaFrenar">¿Cómo sueles frenar?</label></h3>
+                    <select name="forma" id="formaFrenar">
+                        <option value="0" selected="selected">Elija una opción</option>
+                        <option value="t">En T</option>
+                        <option value="v">En V</option>
+                        <option value="taco">Con taco</option>
+                        <option value="etc">Un poco de todo</option>
+                    </select>
+                    <h3><label for="tipoRueda">Selecciona la dureza de las ruedas.</label></h3>
+                    <select name="durezaRuedas" id="tipoRueda" required>
+                        <option value="0" selected="selected">Elija una opción</option>
+                        <option value="74">74A</option>
+                        <option value="78">78A</option>
+                        <option value="82">82A</option>
+                        <option value="85">85A</option>
+                        <option value="88">88A</option>
+                        <option value="90">90A</option>
+                        <option value="100">100A</option>
+                        <option value="No">No lo se</option>
+                    </select>
+                <br><br>
+                <input type="button" value="Enviar" id="enviar">
+            </fieldset>
+            </form>
+            <br>
+            <div id="confirmacion"></div>
+        </article>
+    </section>
+    <footer>
+        <img id="ruedaUp" src="img/RuedaArriba.png" alt="RuedaArriba">
+    </footer>
 </body>
+
 </html>
