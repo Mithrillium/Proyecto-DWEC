@@ -78,3 +78,24 @@ input{
 #headerPersonalizado{
     height: 100px;
 }
+#formularioPrincipal{
+    width: 180px;
+    margin: auto;
+}
+#formularioPrincipal h3{
+    background-color: black;
+    color: white;
+    font-weight: bolder;
+    font-size: larger;
+}
+select{
+    font-size: large;
+    background-color: yellow;
+}
+select:hover{
+    background-color: black;
+    color: white;
+}
+h3{
+    background-color: yellow;
+}
