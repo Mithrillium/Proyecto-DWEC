@@ -79,8 +79,9 @@ input{
     height: 100px;
 }
 #formularioPrincipal{
-    width: 180px;
+    width: 202px;
     margin: auto;
+    text-align: center;
 }
 #formularioPrincipal h3{
     background-color: black;

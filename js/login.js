@@ -27,20 +27,17 @@ function iniciar() {
             objetoNombre = JSON.parse(localStorage.getItem(nombre));
             if (document.getElementById("pass").value != objetoNombre.pass) {
                 document.getElementById("confirmacion").innerHTML = "La contraseña no es correcta";
-                //alert( objetoNombre.contrasenia);
             } else {
                 document.getElementById("confirmacion").innerHTML = "";
                 if (objetoNombre.haCompletadoFormulario) {
                     objetoNombre.haEntrado = true;
                     localStorage.setItem(nombre, JSON.stringify(objetoNombre)); //sobreescribe el mismo item, cambiando solo el haEncontrado
                     //va a página de calcular cambios
-                    //Poner haEntrado a true.((IMPORTANTE))
                     window.open("cambiaRuedas.html", "_self");
                 } else {
                     objetoNombre.haEntrado = true;
                     localStorage.setItem(nombre, JSON.stringify(objetoNombre));
                     //va a página formulario de cómo patina
-                    //Poner haEntrado a true.((IMPORTANTE))
                     window.open("formularioPrincipal.html", "_self");
                 }
             }

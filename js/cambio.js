@@ -14,14 +14,24 @@ function compruebaUsuario() {
         }
         i++;
     }
+    /*
+    Proceso: ORDENAR,MOSTRAR,ACUMULAR
+        1. Ordeno el desgaste acumulado (acumuladoDesgaste).
+          1.1. Aunque el orden ha cambiado [x][2] aun mantiene posición en la que está.
+        2. Muestro cambios.
+          2.1. Matriz acumuladoDesgaste[x][2] contiene posición actual, ordenado el desgaste de mayor a menor.
+               Matriz valoresDeDesgaste[x][2] contiene cuanto desgaste se va a cumular en esa posición, ordenado de menor a mayor.
+               La rueda con más desgaste acumulado ire a la posición que menos desgaste aplicará en la siguiente iteración.
+        3. Acumulo el desgaste para la siguiente iteración.
+          3.2. Valores acumuladoDesgaste[x][2] valen lo mismo que valoresDeDesgaste[x][2] (esa es su nueva posición)
+    */
     function calculaMovimientos() {
         var mensaje = "";
-        usuario.acumuladoDesgaste = usuario.acumuladoDesgaste.sort((a, b) => b[1] - a[1]); //Este sort se hace solo una vez, al entregar el formulario de como se patina. No ene este docu.
-        usuario.valoresDeDesgaste = usuario.valoresDeDesgaste.sort((a, b) => a[1] - b[1]); //Este sort se hace cada vez que el usuario valla a cambiar ruedas.
+        //var prueba = ""; //Declarado bajo var mensaje
+        usuario.acumuladoDesgaste = usuario.acumuladoDesgaste.sort((a, b) => b[1] - a[1]);
         for (var i = 0; i < 6; i++) {
             var acumuladoPosicion = usuario.acumuladoDesgaste[i][2];
             var valorPosicion = usuario.valoresDeDesgaste[i][2];
-            //alert("Rueda en posición " + acumuladoPosicion + " a posición " +valorPosicion + ".");   {{MENSAJE SALIDA}}
             if(valorPosicion == acumuladoPosicion){
                 mensaje = mensaje + "Rueda en posición " + acumuladoPosicion + " sigue en la misma posición. Rotar la rueda.<br/>";
             }else{
@@ -48,22 +58,24 @@ function compruebaUsuario() {
             //Sumo valores (acumulo) para la proxima vez que pulse el boton.
             usuario.acumuladoDesgaste[i][0] = usuario.acumuladoDesgaste[i][0] + usuario.valoresDeDesgaste[i][0];
             usuario.acumuladoDesgaste[i][1] = usuario.acumuladoDesgaste[i][1] + usuario.valoresDeDesgaste[i][1];
-            /*
-            En este for tambien hay que comprobar:
-                1. Si cambia o no de posición.
-                2. Si cambia, si cambia o no de patín.
-                3. Si gira sobre si mismo o no 
-                    3.1 Mismo patín [x][0] < [x][1] rota. Osea, si el exterior esta menos desgastado, rota. 
-                    3.2 Cambia patín [x][0] > [x][1] rota. Osea, si el exterior está más desgastado, será otra vez exterior.
-            Probado con:
-                var prueba = ""; //Declarado bajo var mensaje
-                prueba = prueba + usuario.acumuladoDesgaste[i][0] + " - "+ usuario.acumuladoDesgaste[i][1]+"<br/>"; //Antes de este comentario
-                document.getElementById("prueba").innerHTML = prueba; //Tras el for para mostrar
-            */
+            //prueba = prueba + usuario.acumuladoDesgaste[i][0] + " - "+ usuario.acumuladoDesgaste[i][1]+"<br/>"; //Final del fore
         }
         //Sobreescribo el usuario con sus cambios.
         localStorage.setItem(nombre, JSON.stringify(usuario));
         document.getElementById("confirmacion").innerHTML = mensaje;
+        //document.getElementById("prueba").innerHTML = prueba; //Tras el for para mostrar
     }
     document.getElementById("calcular").addEventListener('click', calculaMovimientos, false);
+                /*
+            En este for tambien hay que comprobar:
+                1. Si acumulado de acumuladoDesgaste[x][0] es mayor que acumuladoDesgaste[x][1]. 
+                    1.1. Ordenar por el mayor de los dos, no siempre por acumuladoDesgaste[x][1].
+                2. Si gira sobre si mismo o no 
+                    2.1. Mismo patín [x][0] < [x][1] rota. Osea, si el exterior esta menos desgastado, rota. 
+                    2.2. Cambia patín [x][0] > [x][1] rota. Osea, si el exterior está más desgastado, será otra vez exterior.
+            Probado con:
+                var prueba = ""; //Declarado bajo var mensaje
+                prueba = prueba + usuario.acumuladoDesgaste[i][0] + " - "+ usuario.acumuladoDesgaste[i][1]+"<br/>"; //Final del for
+                document.getElementById("prueba").innerHTML = prueba; //Tras el for para mostrar
+            */
 }

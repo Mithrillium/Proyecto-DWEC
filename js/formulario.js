@@ -6,13 +6,11 @@ function compruebaUsuario(){
     var i = 0;
     while(!encontrado){
         usuario = JSON.parse(localStorage.getItem( localStorage.key(i)));
-        //Quizas tengo que comprobar si es un objeto
         if(usuario.haEntrado){
             nombre = localStorage.key(i);
             usuario.haEntrado = false;
             localStorage.setItem(nombre, JSON.stringify(usuario));
             encontrado = true;
-            //alert(nombre);
             document.getElementById("nom").innerHTML = nombre;
         }
         i++;
@@ -23,35 +21,31 @@ function compruebaUsuario(){
               document.getElementById("tipoRueda").value != 0){
             //Patin izquierdo son indices 0, 1 y 2
             if(document.getElementById("pierna").value =="zurdo"){
-                var tabla = usuario.valoresDeDesgaste.slice();
                 for(var j = 0 ; j < 3 ; j++){
                     for(var k = 0 ; k < 2 ; k++){
-                        tabla[j][k] = tabla[j][k] + 15;
+                        usuario.valoresDeDesgaste[j][k] = usuario.valoresDeDesgaste[j][k] + 5;
                     }
                 }
-                usuario.valoresDeDesgaste = tabla.slice();
             }
             //Patin derecho son indices 3, 4 y 5
             if(document.getElementById("pierna").value =="diestro"){
-                var tabla = usuario.valoresDeDesgaste.slice();
                 for(var j = 3 ; j < 6 ; j++){
                     for(var k = 0 ; k < 2 ; k++){
-                        tabla[j][k] = tabla[j][k] + 15;
+                        usuario.valoresDeDesgaste[j][k] = usuario.valoresDeDesgaste[j][k] + 5;
                     }
                 }
-                usuario.valoresDeDesgaste = tabla.slice();
             }
             //Si frena en t y es zurdo, incrementa desgaste interior del pie izquierdo
             if(document.getElementById("formaFrenar").value =="t" && document.getElementById("pierna").value =="zurdo"){
-                usuario.valoresDeDesgaste[0][1] = usuario.valoresDeDesgaste[0][1] + 20;
-                usuario.valoresDeDesgaste[1][1] = usuario.valoresDeDesgaste[1][1] + 20;
+                usuario.valoresDeDesgaste[0][1] = usuario.valoresDeDesgaste[0][1] + 10;
+                usuario.valoresDeDesgaste[1][1] = usuario.valoresDeDesgaste[1][1] + 10;
                 usuario.valoresDeDesgaste[2][1] = usuario.valoresDeDesgaste[2][1] + 20;
             }
             //Si frena en t y es diestro, incrementa desgaste interior del pie derecho
             if(document.getElementById("formaFrenar").value =="t" && document.getElementById("pierna").value =="diestro"){
-                usuario.valoresDeDesgaste[3][1] = usuario.valoresDeDesgaste[3][1] + 20;
-                usuario.valoresDeDesgaste[4][1] = usuario.valoresDeDesgaste[4][1] + 20;
-                usuario.valoresDeDesgaste[5][1] = usuario.valoresDeDesgaste[5][1] + 20;
+                usuario.valoresDeDesgaste[3][1] = usuario.valoresDeDesgaste[3][1] + 10;
+                usuario.valoresDeDesgaste[4][1] = usuario.valoresDeDesgaste[4][1] + 10;
+                usuario.valoresDeDesgaste[5][1] = usuario.valoresDeDesgaste[5][1] + 10;
             }
             //Si frena en V ambos patines incrementan desgaste exterior
             if(document.getElementById("formaFrenar").value =="v"){
