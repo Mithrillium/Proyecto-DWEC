@@ -33,19 +33,19 @@ function compruebaUsuario() {
             var acumuladoPosicion = usuario.acumuladoDesgaste[i][2];
             var valorPosicion = usuario.valoresDeDesgaste[i][2];
             if(valorPosicion == acumuladoPosicion){
-                mensaje = mensaje + "Rueda en posición " + acumuladoPosicion + " sigue en la misma posición. Rotar la rueda.<br/>";
+                mensaje = mensaje + "Rueda en posición " + acumuladoPosicion + " sigue en la misma posición.<br/> Rotar la rueda.<br/><br/>";
             }else{
-                if(acumuladoPosicion >= 3){
-                    if(valorPosicion >= 3){
-                        mensaje = mensaje + "Rueda en posición " + acumuladoPosicion + " a posición "+ valorPosicion +" (mismo patín). Rotar la rueda.<br/>";
+                if(acumuladoPosicion >= 4){
+                    if(valorPosicion >= 4){
+                        mensaje = mensaje + "Rueda en posición " + acumuladoPosicion + " a posición "+ valorPosicion +" (mismo patín).<br/> Rotar la rueda.<br/><br/>";
                     }else{
-                        mensaje = mensaje + "Rueda en posición " + acumuladoPosicion + " a posición "+ valorPosicion +" (cambia de patín). Rotar la rueda.<br/>";
+                        mensaje = mensaje + "Rueda en posición " + acumuladoPosicion + " a posición "+ valorPosicion +" (cambia de patín).<br/> Rotar la rueda.<br/><br/>";
                     }
                 }else{
-                    if(valorPosicion <= 2){
-                        mensaje = mensaje + "Rueda en posición " + acumuladoPosicion + " a posición "+ valorPosicion +" (mismo patín). Rotar la rueda.<br/>";
+                    if(valorPosicion <= 3){
+                        mensaje = mensaje + "Rueda en posición " + acumuladoPosicion + " a posición "+ valorPosicion +" (mismo patín).<br/> Rotar la rueda.<br/><br/>";
                     }else{
-                        mensaje = mensaje + "Rueda en posición " + acumuladoPosicion + " a posición "+ valorPosicion +" (cambia de patín). Rotar la rueda.<br/>";
+                        mensaje = mensaje + "Rueda en posición " + acumuladoPosicion + " a posición "+ valorPosicion +" (cambia de patín).<br/> Rotar la rueda.<br/><br/>";
                     }
                 }
             }
@@ -62,7 +62,7 @@ function compruebaUsuario() {
         }
         //Sobreescribo el usuario con sus cambios.
         localStorage.setItem(nombre, JSON.stringify(usuario));
-        document.getElementById("confirmacion").innerHTML = mensaje;
+        document.getElementById("datos").innerHTML = mensaje;
         //document.getElementById("prueba").innerHTML = prueba; //Tras el for para mostrar
     }
     document.getElementById("calcular").addEventListener('click', calculaMovimientos, false);
