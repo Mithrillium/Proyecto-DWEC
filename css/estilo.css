@@ -1,14 +1,28 @@
-#contenido{
+#calculos {
+    margin: auto;
+    width: 60%;
+    min-height: 875px;
+    text-align: center;
+    background-color: white;
+    border-style: groove;
+    border-width: 2mm;
+    border-radius: 1mm;
+    margin-top: 5px;
+}
+
+#contenido {
     width: 60%;
     margin: auto;
     background-color: white;
     margin-top: 5px;
 }
-body{
+
+body {
     background-color: black;
- }
-header{
-    margin:auto;
+}
+
+header {
+    margin: auto;
     width: 60%;
     height: 300px;
     text-align: center;
@@ -18,23 +32,27 @@ header{
     border-radius: 1mm;
     margin-top: 5px;
 }
-#ruedaIzq{
+
+#ruedaIzq {
     float: left;
     max-width: 100%;
     max-height: 100%;
 }
-#ruedaDer{
+
+#ruedaDer {
     float: right;
     max-width: 100%;
     max-height: 100%;
 }
-section{
+
+section {
     border-style: groove;
     border-width: 2mm;
     border-radius: 1mm;
 }
-footer{
-    margin:auto;
+
+footer {
+    margin: auto;
     width: 60%;
     height: 300px;
     text-align: center;
@@ -44,59 +62,71 @@ footer{
     border-radius: 1mm;
     margin-top: 5px;
 }
-#ruedaUp{
+
+#ruedaUp {
     max-width: 100%;
     max-height: 100%;
 }
-form{
+
+form {
     margin: auto;
     width: 200px;
     margin-top: 10px;
     font-weight: bold;
 }
-fieldset{
+
+fieldset {
     border-color: black;
 }
-#enviar{
+
+#enviar {
     background-color: white;
-    color:black;
+    color: black;
     letter-spacing: 0px;
     font-weight: bolder;
 }
-#confirmacion{
+
+#confirmacion {
     text-align: center;
     color: red;
     font-weight: bolder;
 
 }
-input{
+
+input {
     background-color: black;
     letter-spacing: 2px;
-    color:white;
+    color: white;
     font-weight: bolder;
 }
-#headerPersonalizado{
+
+#headerPersonalizado {
     height: 100px;
 }
-#formularioPrincipal{
+
+#formularioPrincipal {
     width: 202px;
     margin: auto;
     text-align: center;
 }
-#formularioPrincipal h3{
+
+#formularioPrincipal h3 {
     background-color: black;
     color: white;
     font-weight: bolder;
     font-size: larger;
 }
-select{
+
+select {
     font-size: large;
     background-color: yellow;
 }
-select:hover{
+
+select:hover {
     background-color: black;
     color: white;
 }
-h3{
+
+h3 {
     background-color: yellow;
 }
