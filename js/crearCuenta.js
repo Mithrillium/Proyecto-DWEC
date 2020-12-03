@@ -54,7 +54,6 @@ function iniciar() {
                     persona.haEntrado(false); //Para encontrar usuario en la siguiente página, al hacer login pongo true y busco el único true luego.
                     persona.haCompletadoFormulario(false);
                     localStorage.setItem(nombre, JSON.stringify(persona));
-                    document.getElementById("confirmacion").innerHTML = "Se ha creado la cuenta correctamente.";
                     window.open("login.html", "_self");
                 } else { //Si no coinciden...
                     document.getElementById("confirmacion").innerHTML = "Las constraseñas no coinciden.";
