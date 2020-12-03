@@ -1,3 +1,15 @@
+#calcular{
+    font-size: xx-large;
+    font-weight: bolder;
+    margin-top: 15px;
+}
+#instrucciones{
+    width: 60%;
+    margin: auto;
+    background-color: white;
+    margin-top: 5px;
+    text-align: center;
+}
 p{
     text-align: center; 
     font-weight: bold;
