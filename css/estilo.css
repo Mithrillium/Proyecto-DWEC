@@ -10,6 +10,11 @@
     margin-top: 5px;
     text-align: center;
 }
+select:hover {
+    background-color: black;
+    color: white;
+}
+
 p{
     text-align: center; 
     font-weight: bold;
@@ -147,11 +152,6 @@ input {
 select {
     font-size: large;
     background-color: yellow;
-}
-
-select:hover {
-    background-color: black;
-    color: white;
 }
 
 h3 {

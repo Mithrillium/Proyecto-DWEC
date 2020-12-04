@@ -58,6 +58,8 @@ function compruebaUsuario(){
             }
             //La primera vez, el desgaste acumulado es igual a los valores de desgaste.
             usuario.acumuladoDesgaste = usuario.valoresDeDesgaste.slice();
+            //Luego ordena menor a mayor valoresDeDesgaste
+            usuario.valoresDeDesgaste = usuario.valoresDeDesgaste.sort((a, b) => a[1] - b[1]);
             usuario.haEntrado = true;
             usuario.haCompletadoFormulario = true;
             localStorage.setItem(nombre, JSON.stringify(usuario));

@@ -46,7 +46,6 @@ function iniciar() {
                     ];
                     persona.valoresDeDesgaste(valoresDesgaste);
                     persona.acumuladoDesgaste = valoresDesgaste.slice(); // Primera vez, valoresde desgaste y acumulado valen lo mismo.
-                    persona.valoresDeDesgaste = persona.valoresDeDesgaste.sort((a, b) => a[1] - b[1]);
                     /*
                     El sort valores de desgaste se hace solo una vez. 
                     El sort de acumulao de desgaste se hace cada vez que el usuario cambia ruedas.
@@ -54,7 +53,7 @@ function iniciar() {
                     persona.haEntrado(false); //Para encontrar usuario en la siguiente página, al hacer login pongo true y busco el único true luego.
                     persona.haCompletadoFormulario(false);
                     localStorage.setItem(nombre, JSON.stringify(persona));
-                    window.open("login.html", "_self");
+                    window.open("index.html", "_self");
                 } else { //Si no coinciden...
                     document.getElementById("confirmacion").innerHTML = "Las constraseñas no coinciden.";
                 }
